@@ -1,0 +1,154 @@
+
+SQL> SELECT * FROM EMPLOYEE;
+
+       EID ENAME    ADRES     SALARY CITY
+---------- -------- ----- ---------- ------
+        61 SWARUP   SKLM       80000 SKLM
+
+SQL> LENGTH('HELLO');
+SP2-0734: unknown command beginning "LENGTH('HE..." - rest of line ignored.
+SQL> SELECT REPLACE('ABC ABCD CFGH',ABC,PQR)
+  2  RESULT FROM dual;
+SELECT REPLACE('ABC ABCD CFGH',ABC,PQR)
+                                   *
+ERROR at line 1:
+ORA-00904: "PQR": invalid identifier
+
+
+SQL> SELECT REPLACE('ABC ABCD CFGH','ABC','PQR')
+  2  RESULT FROM dual;
+
+RESULT
+-------------
+PQR PQRD CFGH
+
+SQL> SELECT REPLACE('ABC ABCD CFGH','ABC','PQ')
+  2  RESULT FROM dual;
+
+RESULT
+-----------
+PQ PQD CFGH
+
+SQL> select length('hello')
+  2  result from dual;
+
+    RESULT
+----------
+         5
+
+SQL> SELECT UPPER('santhi swarup')
+  2  result from dual;
+
+RESULT
+-------------
+SANTHI SWARUP
+
+SQL> SELECT LOWER('SANTHI SWARUP')
+  2  RESULT FROM DUAL;
+
+RESULT
+-------------
+santhi swarup
+
+SQL> SELECT LTRIM('SWARUP ROY',LENGTH[,Y])
+  2  RESULT FROM DUAL;
+SELECT LTRIM('SWARUP ROY',LENGTH[,Y])
+                                *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> TO CHAR(SYSDATE,'DDMONTHYY
+SP2-0734: unknown command beginning "TO CHAR(SY..." - rest of line ignored.
+SQL> SELECT COUNT('HELLO WORLD')AS
+  2  RESULT FROM DUAL;
+
+    RESULT
+----------
+         1
+
+SQL> SELECT LENGTH('HELLO') AS
+  2  RESULT FROM DUAL;
+
+    RESULT
+----------
+         5
+
+SQL> SELECT LOWER('HELLO WORLD')AS
+  2  RESULT FROM DUAL;
+
+RESULT
+-----------
+hello world
+
+SQL> SELECT LENGTH('hello world') AS
+  2  RESULT FROM DUAL;
+
+    RESULT
+----------
+        11
+
+SQL> SELECT LOWER('HELLO WORLD')AS
+  2  RESULT FROM DUAL;
+
+RESULT
+-----------
+hello world
+
+SQL> SELECT upper('hello world') AS
+  2  RESULT FROM DUAL;
+
+RESULT
+-----------
+HELLO WORLD
+
+SQL>
+SQL> SELECT TO_CHAR(SYSDATE,'MON, DD,YYYY')
+  2  FROM DUAL;
+
+TO_CHAR(SYSD
+------------
+OCT, 28,2022
+
+SQL> SELECT TO_CHAR(SYSDATE,'MM, DD,YY')
+  2  FROM DUAL;
+
+TO_CHAR(S
+---------
+10, 28,22
+
+SQL> SELECT TO_CHAR(SYSDATE,'MON, DD,YEAR')
+  2  FROM DUAL;
+
+TO_CHAR(SYSDATE,'MON,DD,YEAR')
+--------------------------------------------------
+OCT, 28,TWENTY TWENTY-TWO
+
+SQL> SELECT TO_CHAR(SYSDATE,'MM, DD,YY')
+  2  FROM DUAL;
+
+TO_CHAR(S
+---------
+10, 28,22
+
+SQL> SELECT TO_CHAR(SYSDATE,'MM, DDDD,YY')
+  2  FROM DUAL;
+
+TO_CHAR(SYS
+-----------
+10, 3016,22
+
+SQL> SELECT TO_CHAR(SYSDATE,'MM, DDD,YY')
+  2  FROM DUAL;
+
+TO_CHAR(SY
+----------
+10, 301,22
+
+SQL> SELECT TO_CHAR(SYSDATE,'MM, D,YY')
+  2  FROM DUAL;
+
+TO_CHAR(
+--------
+10, 6,22
+SQL>

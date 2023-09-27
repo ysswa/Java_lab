@@ -1,0 +1,46 @@
+            1)Identifying the Requirements from Problem Statements
+Requirements | Characteristics of Requirements | Categorization of Requirements | Functional Requirements | Identifying Functional Requirements
+
+
+           2)Estimation of Project Metrics
+Project Estimation Techniques | COCOMO | Basic COCOMO Model | Intermediate COCOMO Model | Complete COCOMO Model | Advantages of COCOMO | Drawbacks of COCOMO | Halstead's Complexity Metrics
+
+
+           3)Modeling UML Use Case Diagrams and Capturing Use Case Scenarios
+Use case diagrams | Actor | Use Case | Subject | Graphical Representation | Association between Actors and Use Cases | Use Case Relationships | Include Relationship |
+ Extend Relationship | Generalization Relationship | Identifying Actors | Identifying Use cases | Guidelines for drawing Use Case diagrams
+
+
+           4)E-R Modeling from the Problem Statements
+Entity Relationship Model | Entity Set and Relationship Set | Attributes of Entity | Keys | Weak Entity | Entity Generalization and Specialization |
+ Mapping Cardinalities | ER Diagram | Graphical Notations for ER Diagram | Importance of E
+
+
+
+           5)Identifying Domain Classes from the Problem Statements
+Domain Class | Traditional Techniques for Identification of Classes | Grammatical Approach Using Nouns | Advantages | Disadvantages | Using Generalization |
+ Using Subclasses | Steps to Identify Domain Classes from Problem Statement | Advanced Concepts
+
+
+           6)Statechart and Activity Modeling
+Statechart Diagrams | Building Blocks of a Statechart Diagram | State | Transition | Action | Guidelines for drawing Statechart Diagrams | Activity Diagrams | 
+Components of an Activity Diagram | Activity | Flow | Decision | Merge | Fork | Join | Note | Partition | A Simple Example | Guidelines for drawing an Activity Diagram
+
+
+          7)  Modeling UML Class Diagrams and Sequence diagrams
+Structural and Behavioral aspects | Class diagram | Elements in class diagram | Class | Relationships | Sequence diagram | Elements in sequence diagram | Object | Life-line bar | Messages
+
+
+          8)  Modeling Data Flow Diagrams
+Data Flow Diagram | Graphical notations for Data Flow Diagram | Explanation of Symbols used in DFD | Context diagram and leveling DFD
+           
+
+            9)Estimation of Test Coverage Metrics and Structural Complexity
+Control Flow Graph | Terminologies | McCabe's Cyclomatic Complexity | Computing Cyclomatic Complexity | Optimum Value of Cyclomatic Complexity | Merits | Demerits
+
+
+
+
+          10)Designing Test Suites
+Software Testing | Standards for Software Test Documentation | Testing Frameworks | Need for Software Testing | Test Cases and Test Suite | Types of Software Testing | Unit Testing |
+ Integration Testing | System Testing | Example | Some Remarks

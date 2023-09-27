@@ -1,0 +1,535 @@
+
+<!-- saved from url=(0071)https://www.cs.utexas.edu/~mitra/csFall2009/cs329/lectures/sqlFunc.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title> Built-in Functions in SQL </title>
+
+</head><body>
+<center>
+<h2> Built-in Functions in SQL </h2>
+</center>
+<h3> Numberic Functions </h3>
+<table border="1" width="90%">
+<tbody><tr>
+<th> Function </th>
+<th> Input Argument </th>
+<th> Value Returned </th>
+</tr>
+<tr>
+<td> ABS ( m ) </td>
+<td> m = value </td>
+<td> Absolute value of m </td>
+</tr>
+<tr>
+<td> MOD ( m, n ) </td>
+<td> m = value, n = divisor </td>
+<td> Remainder of m divided by n </td>
+</tr>
+<tr>
+<td> POWER ( m, n ) </td>
+<td> m = value, n = exponent </td>
+<td> m raised to the nth power </td>
+</tr>
+<tr>
+<td> ROUND ( m [, n ] ) </td>
+<td> m = value, n = number of decimal places, default 0 </td>
+<td> m rounded to the nth decimal place  </td>
+</tr>
+<tr>
+<td> TRUNC ( m [, n ] ) </td>
+<td> m = value, n = number of decimal places, default 0 </td>
+<td> m truncated to the nth decimal place  </td>
+</tr>
+<tr>
+<td> SIN ( n ) </td>
+<td> n = angle expressed in radians </td>
+<td> sine (n)  </td>
+</tr>
+<tr>
+<td> COS ( n ) </td>
+<td> n = angle expressed in radians </td>
+<td> cosine (n) </td>
+</tr>
+<tr>
+<td> TAN ( n ) </td>
+<td> n = angle expressed in radians </td>
+<td> tan (n) </td>
+</tr>
+<tr>
+<td> ASIN ( n ) </td>
+<td> n is in the range -1 to +1 </td>
+<td> arc sine of n in the range -&#960;/2 to +&#960;/2 </td>
+</tr>
+<tr>
+<td> ACOS ( n ) </td>
+<td> n is in the range -1 to +1 </td>
+<td> arc cosine of n in the range 0 to &#960; </td>
+</tr>
+<tr>
+<td> ATAN ( n ) </td>
+<td> n is unbounded </td>
+<td> arc tangent of n in the range -&#960;/2 to + &#960;/2 </td>
+</tr>
+<tr>
+<td> SINH ( n ) </td>
+<td> n = value </td>
+<td> hyperbolic sine of n </td>
+</tr>
+<tr>
+<td> COSH ( n ) </td>
+<td> n = value </td>
+<td> hyperbolic cosine of n </td>
+</tr>
+<tr>
+<td> TANH ( n ) </td>
+<td> n = value </td>
+<td> hyperbolic tangent of n </td>
+</tr>
+<tr>
+<td> SQRT ( n ) </td>
+<td> n = value </td>
+<td> positive square root of n </td>
+</tr>
+<tr>
+<td> EXP ( n ) </td>
+<td> n = value </td>
+<td> e raised to the power n </td>
+</tr>
+<tr>
+<td> LN ( n ) </td>
+<td> n &gt; 0 </td>
+<td> natural logarithm of n  </td>
+</tr>
+<tr>
+<td> LOG ( n2, n1 ) </td>
+<td> base n2 any positive value other than 0 or 1, n1 any positive value </td>
+<td> logarithm of n1, base n2 </td>
+</tr>
+<tr>
+<td> CEIL ( n ) </td>
+<td> n = value </td>
+<td> smallest integer greater than or equal to n </td>
+</tr>
+<tr>
+<td> FLOOR ( n ) </td>
+<td> n = value </td>
+<td> greatest integer smaller than or equal to n </td>
+</tr>
+<tr>
+<td> SIGN ( n ) </td>
+<td> n = value </td>
+<td> -1 if n &lt; 0, 0 if n = 0, and 1 if n &gt; 0 </td>
+</tr>
+</tbody></table>
+
+<p>
+Here are some examples of the use of some of these numeric functions:
+</p><pre>select round (83.28749, 2) from dual;
+
+select sqrt (3.67) from dual;
+
+select power (2.512, 5) from dual;
+
+</pre>
+<p></p>
+
+<h3> String Functions </h3>
+<table border="1" width="90%">
+<tbody><tr>
+<th> Function </th>
+<th> Input Argument </th>
+<th> Value Returned </th>
+</tr>
+<tr>
+<td> INITCAP ( s ) </td>
+<td> s = character string </td>
+<td> First letter of each word is changed to uppercase and all other letters
+are in lower case. </td>
+</tr>
+<tr>
+<td> LOWER ( s ) </td>
+<td> s = character string </td>
+<td> All letters are changed to lowercase. </td>
+</tr>
+<tr>
+<td> UPPER ( s ) </td>
+<td> s = character string </td>
+<td> All letters are changed to uppercase. </td>
+</tr>
+<tr>
+<td> CONCAT ( s1, s2 ) </td>
+<td> s1 and s2 are character strings </td>
+<td> Concatenation of s1 and s2. Equivalent to <i> s1 || s2 </i> </td>
+</tr>
+<tr>
+<td> LPAD ( s1, n [, s2] ) </td>
+<td> s1 and s2 are character strings and n is an integer value </td>
+<td> Returns s1 right justified and padded left with n characters from s2; 
+s2 defaults to space. </td>
+</tr>
+<tr>
+<td> RPAD ( s1, n [, s2] ) </td>
+<td> s1 and s2 are character strings and n is an integer value </td>
+<td> Returns s1 left justified and padded right with n characters from s2; 
+s2 defaults to space. </td>
+</tr>
+<tr>
+<td> LTRIM ( s [, set ] )</td>
+<td> s is a character string and <i> set </i> is a set of characters </td>
+<td> Returns s with characters removed up to the first character not
+in set; defaults to space </td>
+</tr>
+<tr>
+<td> RTRIM ( s [, set ] )</td>
+<td> s is a character string and <i> set </i> is a set of characters </td>
+<td> Returns s with final characters removed after the last character not
+in set; defaults to space </td>
+</tr>
+<tr>
+<td> REPLACE ( s, search_s [, replace_s ] ) </td>
+<td> s = character string, search_s = target string, replace_s = 
+replacement string </td>
+<td> Returns s with every occurrence of search_s in s replaced by replace_s;
+default removes search_s </td>
+</tr>
+<tr>
+<td> SUBSTR ( s, m [, n ] ) </td>
+<td> s = character string, m = beginning position, n = number of 
+characters </td>
+<td> Returns a substring from s, beginning in position m and n characters
+long; default returns to end of s. </td>
+</tr>
+<tr>
+<td> LENGTH ( s ) </td>
+<td> s = character string </td>
+<td> Returns the number of characters in s. </td>
+</tr>
+<tr>
+<td> INSTR ( s1, s2 [, m [, n ] ] ) </td>
+<td> s1 and s2 are character strings, m = beginning position, n = 
+occurrence of s2 in s1 </td>
+<td> Returns the position of the nth occurrence of s2 in s1, beginning at
+position m, both m and n default to 1. </td>
+</tr>
+</tbody></table>
+
+<p>
+Here are some examples of the use of String functions:
+</p><pre>
+select concat ('Alan', 'Turing') as "NAME" from dual;
+
+select 'Alan' || 'Turing' as "NAME" from dual;
+
+select initcap ("now is the time for all good men to come to the aid of the
+party") as "SLOGAN" from dual;
+
+select substr ('Alan Turing', 1, 4) as "FIRST" from dual;
+
+</pre>
+<p></p>
+
+<h3>  String / Number Conversion Functions </h3>
+<table border="1" width="90%">
+<tbody><tr>
+<th> Function </th>
+<th> Input Argument </th>
+<th> Value Returned </th>
+</tr>
+<tr>
+<td> NANVL ( n2, n1 ) </td>
+<td> n1, n2 = value </td>
+<td> if (n2 = NaN) returns n1 else returns n2 </td>
+</tr>
+<tr>
+<td> TO_CHAR ( m [, fmt ] ) </td>
+<td> m = numeric value, fmt = format </td>
+<td> Number m converted to character string as specified by the format </td>
+</tr>
+<tr>
+<td> TO_NUMBER ( s [, fmt ] ) </td>
+<td> s = character string, fmt = format </td>
+<td> Character string s converted to a number as specified by the format </td>
+</tr>
+</tbody></table>
+
+<h3> Formats for TO_CHAR Function </h3>
+<table border="1" width="50%">
+<tbody><tr>
+<th> Symbol </th>
+<th> Explanation </th>
+</tr>
+<tr>
+<td> 9 </td>
+<td> Each 9 represents one digit in the result </td>
+</tr>
+<tr>
+<td> 0 </td>
+<td> Represents a leading zero to be displayed </td>
+</tr>
+<tr>
+<td> $ </td>
+<td> Floating dollar sign printed to the left of number </td>
+</tr>
+<tr>
+<td> L </td>
+<td> Any local floating currency symbol </td>
+</tr>
+<tr>
+<td> <b>.</b> </td>
+<td> Prints the decimal point </td>
+</tr>
+<tr>
+<td> <b>,</b> </td>
+<td> Prints the comma to represent thousands </td>
+</tr>
+</tbody></table>
+
+<h3> Group Functions </h3>
+<table border="1" width="90%">
+<tbody><tr>
+<th> Function </th>
+<th> Input Argument </th>
+<th> Value Returned </th>
+</tr>
+<tr>
+<td> AVG ( [ DISTINCT | ALL ] col ) </td>
+<td> col = column name </td>
+<td> The average value of that column </td>
+</tr>
+<tr>
+<td> COUNT ( * ) </td>
+<td> none </td>
+<td> Number of rows returned including duplicates and NULLs </td>
+</tr>
+<tr>
+<td> COUNT ( [ DISTINCT | ALL ] col ) </td>
+<td> col = column name </td>
+<td> Number of rows where the value of the column is not NULL </td>
+</tr>
+<tr>
+<td> MAX ( [ DISTINCT | ALL ] col ) </td>
+<td> col = column name </td>
+<td> Maximum value in the column </td>
+</tr>
+<tr>
+<td> MIN ( [ DISTINCT | ALL ] col ) </td>
+<td> col = column name </td>
+<td> Minimum value in the column </td>
+</tr>
+<tr>
+<td> SUM ( [ DISTINCT | ALL ] col ) </td>
+<td> col = column name </td>
+<td> Sum of the values in the column </td>
+</tr>
+<tr>
+<td> CORR ( e1, e2 ) </td>
+<td> e1 and e2 are column names </td>
+<td> Correlation coefficient between the two columns after eliminating
+nulls </td>
+</tr>
+<tr>
+<td> MEDIAN ( col ) </td>
+<td> col = column name </td>
+<td> Middle value in the sorted column, interpolating if necessary </td>
+</tr>
+<tr>
+<td> STDDEV ( [ DISTINCT | ALL ] col ) </td>
+<td> col = column name </td>
+<td> Standard deviation of the column ignoring NULL values </td>
+</tr>
+<tr>
+<td> VARIANCE ( [ DISTINCT | ALL ] col ) </td>
+<td> col = column name </td>
+<td> Variance of the column ignoring NULL values </td>
+</tr>
+
+</tbody></table>
+
+<h3> Date and Time Functions </h3>
+<table border="1" width="90%">
+<tbody><tr>
+<th> Function </th>
+<th> Input Argument </th>
+<th> Value Returned </th>
+</tr>
+<tr>
+<td> ADD_MONTHS ( d, n ) </td>
+<td> d = date, n = number of months </td>
+<td> Date d plus n months </td>
+</tr>
+<tr>
+<td> LAST_DAY ( d ) </td>
+<td> d = date </td>
+<td> Date of the last day of the month containing d </td>
+</tr>
+<tr>
+<td> MONTHS_BETWEEN ( d, e ) </td>
+<td> d and e are dates </td>
+<td> Number of months by which e precedes d </td>
+</tr>
+<tr>
+<td> NEW_TIME ( d, a, b ) </td>
+<td> d = date, a = time zone (char), b = time zone (char) </td>
+<td> The date and time in time zone b when date d is for time zone a </td>
+</tr>
+<tr>
+<td> NEXT_DAY ( d, day ) </td>
+<td> d = date, day = day of the week </td>
+<td> Date of the first day of the week after d </td>
+</tr>
+<tr>
+<td> SYSDATE </td>
+<td> none </td>
+<td> Current date and time </td>
+</tr>
+<tr>
+<td> GREATEST ( d1, d2, ..., dn ) </td>
+<td> d1 ... dn = list of dates </td>
+<td> Latest of the given dates </td>
+</tr>
+<tr>
+<td> LEAST ( d1, d2, ..., dn ) </td>
+<td> d1 ... dn = list of dates </td>
+<td> Earliest of the given dates </td>
+</tr>
+</tbody></table>
+
+<h3> Date Conversion Functions </h3>
+<table border="1" width="90%">
+<tbody><tr>
+<th> Function </th>
+<th> Input Argument </th>
+<th> Value Returned </th>
+</tr>
+<tr>
+<td> TO_CHAR ( d [, fmt ] ) </td>
+<td> d = date value, fmt = format for string </td>
+<td> The date d converted to a string in the given format </td>
+</tr>
+<tr>
+<td> TO_DATE ( s [, fmt ] ) </td>
+<td> s = character string, fmt = format for date </td>
+<td> String s converted to a date value </td>
+</tr>
+<tr>
+<td> ROUND ( d [, fmt ] ) </td>
+<td> d = date value, fmt = format for string </td>
+<td> Date d rounded as specified by the format </td>
+</tr>
+<tr>
+<td> TRUNC ( d [, fmt ] ) </td>
+<td> d = date value, fmt = format for string </td>
+<td> Date d truncated as specified by the format </td>
+</tr>
+</tbody></table>
+
+<h3> Date Formats </h3>
+<table border="1" width="60%">
+<tbody><tr>
+<th> Format Code </th>
+<th> Description </th>
+<th> Range of Values </th>
+</tr>
+<tr>
+<td> DD </td>
+<td> Day of the month </td>
+<td> 1 - 31 </td>
+</tr>
+<tr>
+<td> DY </td>
+<td> Name of the day in 3 uppercase letters </td>
+<td> SUN, ..., SAT </td>
+</tr>
+<tr>
+<td> DAY </td>
+<td> Complete name of the day in uppercase, padded to 9 characters </td>
+<td> SUNDAY, ..., SATURDAY </td>
+</tr>
+<tr>
+<td> MM </td>
+<td> Number of the month </td>
+<td> 1 - 12 </td>
+</tr>
+<tr>
+<td> MON  </td>
+<td> Name of the month in 3 uppercase letters </td>
+<td> JAN, ..., DEC </td>
+</tr>
+<tr>
+<td> MONTH </td>
+<td> Name of the month in uppercase padded to a length of 9 characters </td>
+<td> JANUARY, ..., DECEMBER </td>
+</tr>
+<tr>
+<td> RM </td>
+<td> Roman numeral for the month </td>
+<td> I, ..., XII </td>
+</tr>
+<tr>
+<td> YY or YYYY </td>
+<td> Two or four digit year </td>
+<td> 71 or 1971 </td>
+</tr>
+<tr>
+<td> HH:MI:SS </td>
+<td> Hours : Minutes : Seconds </td>
+<td> 10:28:53 </td>
+</tr>
+<tr>
+<td> HH 12 or HH 24 </td>
+<td> Hour displayed in 12 or 24 hour format </td>
+<td> 1 - 12 or 1 - 24 </td>
+</tr>
+<tr>
+<td> MI </td>
+<td> Minutes of the hour </td>
+<td> 0 - 59 </td>
+</tr>
+<tr>
+<td> SS </td>
+<td> Seconds of the minute </td>
+<td> 0 - 59 </td>
+</tr>
+<tr>
+<td> AM or PM </td>
+<td> Meridian indicator </td>
+<td> AM or PM </td>
+</tr>
+<tr>
+<td> SP  </td>
+<td> A suffix that forces the number to be spelled out. </td>
+<td> e.g. TWO THOUSAND NINE </td>
+</tr>
+<tr>
+<td> TH </td>
+<td> A suffix meaning that the ordinal number is to be added </td>
+<td> e.g. 1st, 2nd, 3rd, ... </td>
+</tr>
+<tr>
+<td> FM </td>
+<td> Prefix to DAY or MONTH or YEAR to suppress padding </td>
+<td> e.g. MONDAY with no extra spaces at the end </td>
+</tr>
+</tbody></table>
+
+<p>
+Here are some examples of the use of the Date functions:
+</p><pre>select to_char ( sysdate, 'MON DD, YYYY' ) from dual;
+
+select to_char ( sysdate, 'HH12:MI:SS AM' ) from dual;
+
+select to_char ( new_time ( sysdate, 'CDT', 'GMT'), 'HH24:MI' ) from dual;
+
+select greatest ( to_date ( 'JAN 19, 2000', 'MON DD, YYYY' ),
+                  to_date ( 'SEP 27, 1999', 'MON DD, YYYY' ),
+		  to_date ( '13-Mar-2009', 'DD-Mon-YYYY' ) )
+from dual;
+
+select next_day ( sysdate, 'FRIDAY' ) from dual;
+
+select last_day ( add_months ( sysdate, 1 ) ) from dual;
+</pre>
+<p></p>
+
+
+
+</body></html>
